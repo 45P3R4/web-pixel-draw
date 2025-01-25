@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'monogram';
+    src: url('./fonts/monogram-extended.ttf')
+}
+
 html {
     --canvasWidth: 100%;
     --canvasHeight: 100%;
@@ -5,7 +10,14 @@ html {
     --canvasTop: 0;
 }
 
+button {
+    font-family: 'monogram';
+    font-size: 24px;
+}
+
 body {
+    font-family: 'monogram';
+    font-size: 24px;
     overflow: hidden;
     margin: 0;
     background-color: #090909;
@@ -51,5 +63,6 @@ input {
     top: 0;
     left: 0;
     display: flex;
+    gap: 5px;
     align-items: center;
 }
