@@ -8,6 +8,8 @@ import { draw } from "./canvasDraw";
 import { stopDraw } from "./canvasDraw";
 import { canvas } from "./canvas";
 import { canvasContainer } from "./canvas";
+import { newButton } from "./new";
+import { clearCanvas } from "./new";
 
 resizeCanvas();
 
@@ -24,3 +26,5 @@ canvasContainer.addEventListener("mouseup", stopPan);
 canvasContainer.addEventListener("mouseleave", stopPan);
 
 canvasContainer.addEventListener("resize", resizeCanvas);
+
+newButton.addEventListener("mouseup", clearCanvas);
