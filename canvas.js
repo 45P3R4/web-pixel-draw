@@ -16,42 +16,17 @@ context.imageSmoothingEnabled = false;
 canvas.width = window.innerWidth / zoom;
 canvas.height = window.innerHeight / zoom;
 
-window.onwheel = zoomCanvas;
+canvas.addEventListener("mousedown", startDraw);
+canvas.addEventListener("mousemove", draw);
+canvas.addEventListener("mouseup", stopDraw);
+canvas.addEventListener("mouseleave", stopDraw);
+
+window.addEventListener("wheel", zoomCanvas);
+window.addEventListener("mousemove", panCanvas);
 
 window.onresize = function resizeCanvas() {
     canvas.width = window.innerWidth / zoom;
     canvas.height = window.innerHeight / zoom;
-}
-
-canvas.onmousedown = function drawDown(event) {
-    if (event.button !== 0) return;
-    isDrawDown = true;
-    let mousePos = getMousePos(event);
-
-    context.lineWidth = currentSize;
-    context.strokeStyle = currentColor;
-
-    context.beginPath();
-    context.rect(Math.ceil(mousePos.x) -0.5, Math.ceil(mousePos.y) -0.5, currentSize-0.5, currentSize-0.5);
-    context.stroke();
-}
-
-canvas.onmousemove = function drawMove(event) {
-    if (!isDrawDown) return;
-    let mousePos = getMousePos(event);
-
-    context.lineTo(Math.ceil(mousePos.x) -0.5, Math.ceil(mousePos.y) -0.5);
-    context.stroke();
-}
-
-canvas.onmouseleave = function drawLeave() {
-    isDrawDown = false;
-    context.closePath();
-}
-
-window.onmouseup = function drawUp() {
-    isDrawDown = false;
-    context.closePath();
 }
 
 function getMousePos(evn) {
@@ -84,6 +59,11 @@ function draw(evt) {
     context.stroke();
 }
 
+function stopDraw() {
+    isDrawDown = false;
+    context.closePath();
+}
+
 function zoomCanvas(evt) {
     if (evt.deltaY > 0) {
         zoomPercent > 10 ? zoomPercent -= 10 : zoomPercent;
@@ -94,10 +74,4 @@ function zoomCanvas(evt) {
     document.documentElement.setAttribute("style", 
         "--canvasHeight: " + zoomPercent + "%;" + 
         "--canvasWidth: " + zoomPercent + "%");
-}
-
-function panCanvas(evt) {
-    document.documentElement.setAttribute("style", 
-        "--canvasLeft: " + leftPosition + "px;" + 
-        "--canvasTop: " + topPosition + "px");
 }
