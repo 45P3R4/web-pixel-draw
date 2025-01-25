@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" oncontextmenu="return false;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0">
     <title>Web Draw</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body oncontextmenu="return false;">
+<body>
 
-    <div class="canvas-container">
-        <canvas id="canvas" width="device-width" height="device-height"></canvas>
+    <div id="canvas-container" class="canvas-container">
+        <canvas id="canvas" width="64" height="64"></canvas>
     </div>
-    
+
     <div class="tools-container">
         <input type="color" name="color" id="color">
         <input type="number" name="size" id="size" value="1" max="16" min="1">
@@ -19,8 +19,6 @@
 
 </body>
 
-<script src="canvas.js"></script>
-<script src="color.js"></script>
-<script src="size.js"></script>
+<script type="module" src="src/dist/main.js"></script>
 
 </html>

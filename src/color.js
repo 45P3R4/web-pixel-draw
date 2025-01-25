@@ -1,5 +1,5 @@
 const color = document.getElementById("color");
-let currentColor = color.value;
+export let brushColor = color.value;
 
 color.onchange = changeColor;
 

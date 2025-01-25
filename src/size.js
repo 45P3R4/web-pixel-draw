@@ -1,8 +1,8 @@
 const size = document.getElementById("size");
-let currentSize = size.value;
+export let brushSize = size.value;
 
 size.onchange = changeSize;
 
 function changeSize() {
-    currentSize = this.value;
+    brushSize = this.value;
 }
