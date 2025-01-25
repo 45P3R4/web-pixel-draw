@@ -14,7 +14,7 @@ export function startDraw(evt) {
     context.strokeStyle = brushColor;
 
     context.beginPath();
-    context.rect(Math.ceil(mousePos.x) -0.5, Math.ceil(mousePos.y) -0.5, brushSize-0.5, brushSize-0.5);
+    context.rect(Math.ceil(mousePos.x) -0.5, Math.ceil(mousePos.y) -0.5, brushSize, brushSize);
     context.stroke();
 }
 
