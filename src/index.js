@@ -1,3 +1,4 @@
+import { initCanvas } from "./canvas";
 import { resizeCanvas } from "./canvas";
 import { zoomCanvas } from "./canvasZoom";
 import { startPan } from "./canvasPan";
@@ -10,8 +11,10 @@ import { canvas } from "./canvas";
 import { canvasContainer } from "./canvas";
 import { newButton } from "./new";
 import { clearCanvas } from "./new";
+import { saveButton } from "./save";
+import { save } from "./save";
 
-resizeCanvas();
+initCanvas();
 
 canvas.addEventListener("mousedown", startDraw);
 canvas.addEventListener("mousemove", draw);
@@ -28,3 +31,5 @@ canvasContainer.addEventListener("mouseleave", stopPan);
 canvasContainer.addEventListener("resize", resizeCanvas);
 
 newButton.addEventListener("mouseup", clearCanvas);
+
+saveButton.addEventListener("mouseup", save);
