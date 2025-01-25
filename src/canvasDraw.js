@@ -1,7 +1,7 @@
 import { context } from "./canvas";
 import { getMousePos } from "./mouseHandle";
-import { brushColor } from "./color";
-import { brushSize } from "./size";
+import { brushColor } from "./brushColor";
+import { brushSize } from "./brushSize";
 
 let isDrawDown = false;
 

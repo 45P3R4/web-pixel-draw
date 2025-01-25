@@ -13,9 +13,9 @@ export function startPan(evt) {
 
 export function pan(evt) {
     if (!isPanning) return;
-
     canvasPosition.x += getMouseDelta(evt).x;
     canvasPosition.y += getMouseDelta(evt).y;
+    console.log(canvasPosition);
     updateAttributes();
 }
 
