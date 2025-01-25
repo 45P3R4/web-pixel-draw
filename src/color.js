@@ -4,5 +4,5 @@ export let brushColor = color.value;
 color.onchange = changeColor;
 
 function changeColor() {
-    currentColor = this.value;
+    brushColor = this.value;
 }

@@ -66,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   brushColor: () => (/* binding */ brushColor)\n/* harmony export */ });\nconst color = document.getElementById(\"color\");\r\nlet brushColor = color.value;\r\n\r\ncolor.onchange = changeColor;\r\n\r\nfunction changeColor() {\r\n    currentColor = this.value;\r\n}\n\n//# sourceURL=webpack:///./color.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   brushColor: () => (/* binding */ brushColor)\n/* harmony export */ });\nconst color = document.getElementById(\"color\");\r\nlet brushColor = color.value;\r\n\r\ncolor.onchange = changeColor;\r\n\r\nfunction changeColor() {\r\n    brushColor = this.value;\r\n}\n\n//# sourceURL=webpack:///./color.js?");
 
 /***/ }),
 
