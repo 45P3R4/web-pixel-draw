@@ -2,7 +2,7 @@ import { updateAttributes } from "./attributes";
 
 const ZOOM_STEP = 10;
 const MIN_ZOOM = 10;
-const MAX_ZOOM = 100;
+const MAX_ZOOM = 300;
 
 export let zoom = 10;
 export let zoomPercent = 100;
