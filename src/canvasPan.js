@@ -2,6 +2,7 @@ import { updateAttributes } from "./attributes";
 import { setLastMousePos } from "./mouseHandle";
 import { getMouseDelta } from "./mouseHandle";
 import { canvasPosition } from "./canvas";
+import { canvasWrapper } from "./canvas";
 
 let isPanning = false;
 
