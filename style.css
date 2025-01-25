@@ -1,0 +1,42 @@
+html {
+    --canvasWidth: 100%;
+    --canvasHeight: 100%;
+    --canvasLeft: 0;
+    --canvasTop: 0;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    background-color: #090909;
+}
+
+canvas {
+    width: var(--canvasWidth);
+    height: var(--canvasHeight);
+    background-color: white;
+    image-rendering: pixelated;
+}
+
+input {
+    border: 0;
+    box-sizing: border-box;
+    height: 32px;
+}
+
+.canvas-container {
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    position: absolute;
+    left: var(--canvasLeft);
+    top: var(--canvasTop);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tools-container {
+    display: flex;
+    align-items: center;
+}
