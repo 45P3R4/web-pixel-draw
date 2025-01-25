@@ -9,10 +9,10 @@ export let zoomPercent = 100;
 
 export function zoomCanvas(evt) {
     if (evt.deltaY > 0) {
-        zoomPercent = Math.max(MIN_ZOOM, zoomPercent - ZOOM_STEP);
+        zoomPercent = Math.min(MIN_ZOOM, zoomPercent - ZOOM_STEP);
     }
     else if (evt.deltaY < 0) {
-        zoomPercent = Math.min(MAX_ZOOM, zoomPercent + ZOOM_STEP);
+        zoomPercent = Math.max(MAX_ZOOM, zoomPercent + ZOOM_STEP);
     }
     updateAttributes();
 }
