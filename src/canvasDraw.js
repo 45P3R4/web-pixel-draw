@@ -1,4 +1,4 @@
-import { canvas, context } from "./canvas";
+import { canvas, canvasContainer, context } from "./canvas";
 import { getMousePos } from "./mouseHandle";
 import { brushColor } from "./brushColor";
 import { brushSize } from "./brushSize";
@@ -33,7 +33,7 @@ function stopDraw() {
 
 export function initDraw() {
     canvas.addEventListener("mousedown", startDraw);
-    canvas.addEventListener("mousemove", draw);
-    canvas.addEventListener("mouseup", stopDraw);
-    canvas.addEventListener("mouseleave", stopDraw);
+    canvasContainer.addEventListener("mousemove", draw);
+    canvasContainer.addEventListener("mouseup", stopDraw);
+    canvasContainer.addEventListener("mouseleave", stopDraw);
 }
