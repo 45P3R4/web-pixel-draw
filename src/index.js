@@ -4,4 +4,4 @@ import { initSave } from "./save";
 
 initSave();
 initNew();
-initCanvas();
+initCanvas(64, 64, "#FFFFFF");

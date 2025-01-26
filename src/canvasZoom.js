@@ -1,5 +1,5 @@
 import { updateAttributes } from "./attributes";
-import { canvasContainer, resizeCanvas } from "./canvas";
+import { canvasContainer, canvasSize, resizeCanvas } from "./canvas";
 
 const ZOOM_STEP = 1;
 const MIN_ZOOM = 0.1;
@@ -19,5 +19,5 @@ function zoomCanvas(evt) {
 
 export function initZoom() {
     canvasContainer.addEventListener("wheel", zoomCanvas);
-    canvasContainer.addEventListener("resize", resizeCanvas);
+    canvasContainer.addEventListener("resize", resizeCanvas, canvasSize.width, canvasSize.height);
 }

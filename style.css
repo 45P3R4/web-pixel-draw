@@ -87,7 +87,7 @@ input {
     color: #777777BB;
 }
 
-.popup-bg {
+#popup-bg {
     position: fixed;
     left: 0;
     top: 0;
@@ -99,9 +99,8 @@ input {
     background-color: #00000090;
 }
 
-.popup {
+#popup {
     width: 350px;
-    height: 300px;
     box-sizing: border-box;
     padding: 15px;
     display: flex;
@@ -111,11 +110,11 @@ input {
     position: relative;
 }
 
-.popup input {
+#popup input {
     border: 1px solid black;
 }
 
-.close-button {
+#close-button {
     width: 28px;
     height: 28px;
     position: absolute;

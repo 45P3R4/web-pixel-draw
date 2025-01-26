@@ -20,19 +20,25 @@ export let canvasSize = {
     height: 64
 };
 
-export function resizeCanvas() {
-    canvas.width = canvasSize.width;
-    canvas.height = canvasSize.height;
+export function setInitBackgroundColor(newColor) {
+    initBackgroundColor = newColor;
+}
+
+export function resizeCanvas(newWidth, newheight) {
+    canvas.width = newWidth;
+    canvas.height = newheight;
     updateAttributes();
     updateInfo();
 }
 
-export function initCanvas() {
-    resizeCanvas();
-    context.fillStyle = initBackgroundColor;
+export function initCanvas(newWidth, newheight, backgroundColor) {
+    canvasSize.width = newWidth;
+    canvasSize.height = newheight;
+    resizeCanvas(newWidth, newheight);
+    context.fillStyle = backgroundColor;
     context.fillRect(0,0, canvasSize.width, canvasSize.height);
     updateAttributes();
-    
+
     initPan();
     initZoom();
     initDraw();
