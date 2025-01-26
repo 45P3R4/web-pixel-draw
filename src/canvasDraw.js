@@ -37,6 +37,7 @@ function stopDraw() {
 export function initDraw() {
     context.globalAlpha = 2;
     context.lineCap='square';
+    context.lineJoin='bevel'; 
     context.lineWidth = brushSize;
     context.strokeStyle = brushColor;
 

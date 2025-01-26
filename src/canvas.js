@@ -1,4 +1,9 @@
 import { updateAttributes } from "./attributes";
+import { initColor } from "./brushColor";
+import { initSize } from "./brushSize";
+import { initDraw } from "./canvasDraw";
+import { initPan } from "./canvasPan";
+import { initZoom } from "./canvasZoom";
 import { updateInfo } from "./info";
 
 export const canvas = document.getElementById("canvas");
@@ -27,4 +32,10 @@ export function initCanvas() {
     context.fillStyle = initBackgroundColor;
     context.fillRect(0,0, canvasSize.width, canvasSize.height);
     updateAttributes();
+    
+    initPan();
+    initZoom();
+    initDraw();
+    initSize();
+    initColor();
 }
