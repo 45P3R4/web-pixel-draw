@@ -69,7 +69,7 @@ input {
 }
 
 .tools-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
@@ -78,7 +78,7 @@ input {
 }
 
 .info {
-    position: absolute;
+    position: fixed;
     right: 10px;
     bottom: 0;
     color: #777777BB;
