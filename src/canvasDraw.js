@@ -5,16 +5,19 @@ import { brushSize } from "./brushSize";
 
 let isDrawDown = false;
 
+
 function startDraw(evt) {
     if (evt.button !== 0) return;
     isDrawDown = true;
     let mousePos = getMousePos(evt);
-
-    context.lineWidth = brushSize;
-    context.strokeStyle = brushColor;
-
+    
     context.beginPath();
-    context.rect(Math.ceil(mousePos.x) -0.5, Math.ceil(mousePos.y) -0.5, brushSize, brushSize);
+    context.lineTo(
+        Math.ceil(mousePos.x) - brushSize/2, 
+        Math.ceil(mousePos.y) - brushSize/2);
+     context.lineTo(
+        Math.ceil(mousePos.x) - brushSize/2, 
+        Math.ceil(mousePos.y) - brushSize/2);
     context.stroke();
 }
 
@@ -22,7 +25,7 @@ function draw(evt) {
     if (!isDrawDown) return;
     let mousePos = getMousePos(evt);
 
-    context.lineTo(Math.ceil(mousePos.x) -0.5, Math.ceil(mousePos.y) -0.5);
+    context.lineTo(Math.ceil(mousePos.x) - brushSize/2, Math.ceil(mousePos.y) - brushSize/2);
     context.stroke();
 }
 
@@ -32,6 +35,11 @@ function stopDraw() {
 }
 
 export function initDraw() {
+    context.globalAlpha = 2;
+    context.lineCap='square';
+    context.lineWidth = brushSize;
+    context.strokeStyle = brushColor;
+
     canvas.addEventListener("mousedown", startDraw);
     canvasContainer.addEventListener("mousemove", draw);
     canvasContainer.addEventListener("mouseup", stopDraw);
