@@ -39,7 +39,7 @@ canvas {
         linear-gradient(135deg, #AAA 25%, transparent 25%),
         linear-gradient(45deg, transparent 75%, #AAA 75%),
         linear-gradient(135deg, transparent 75%, #AAA 75%);
-    background-size: 6px 6px; /* Must be a square */
+    background-size: 8px 8px; /* Must be a square */
     background-position: center;
 }
 
