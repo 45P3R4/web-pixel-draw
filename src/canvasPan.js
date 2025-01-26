@@ -1,7 +1,7 @@
 import { updateAttributes } from "./attributes";
 import { setLastMousePos } from "./mouseHandle";
 import { getMouseDelta } from "./mouseHandle";
-import { canvasPosition } from "./canvas";
+import { canvasContainer, canvasPosition } from "./canvas";
 
 let isPanning = false;
 
@@ -22,4 +22,11 @@ export function pan(evt) {
 export function stopPan(evt) {
     isPanning = false;
     setLastMousePos(evt.clientX, evt.clientY);
+}
+
+export function initPan() {
+    canvasContainer.addEventListener("mousedown", startPan);
+    canvasContainer.addEventListener("mousemove", pan);
+    canvasContainer.addEventListener("mouseup", stopPan);
+    canvasContainer.addEventListener("mouseleave", stopPan);
 }

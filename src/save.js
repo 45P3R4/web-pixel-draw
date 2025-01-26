@@ -1,8 +1,12 @@
-export const saveButton = document.getElementById("save-button")
+const saveButton = document.getElementById("save-button")
 
-export function save() {
+function save() {
     var link = document.createElement('a');
     link.download = 'image.png';
     link.href = document.getElementById('canvas').toDataURL()
     link.click();
+  }
+
+  export function initSave() {
+    saveButton.addEventListener("mouseup", save);
   }

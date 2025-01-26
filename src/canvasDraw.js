@@ -1,11 +1,11 @@
-import { context } from "./canvas";
+import { canvas, context } from "./canvas";
 import { getMousePos } from "./mouseHandle";
 import { brushColor } from "./brushColor";
 import { brushSize } from "./brushSize";
 
 let isDrawDown = false;
 
-export function startDraw(evt) {
+function startDraw(evt) {
     if (evt.button !== 0) return;
     isDrawDown = true;
     let mousePos = getMousePos(evt);
@@ -18,7 +18,7 @@ export function startDraw(evt) {
     context.stroke();
 }
 
-export function draw(evt) {
+function draw(evt) {
     if (!isDrawDown) return;
     let mousePos = getMousePos(evt);
 
@@ -26,7 +26,14 @@ export function draw(evt) {
     context.stroke();
 }
 
-export function stopDraw() {
+function stopDraw() {
     isDrawDown = false;
     context.closePath();
+}
+
+export function initDraw() {
+    canvas.addEventListener("mousedown", startDraw);
+    canvas.addEventListener("mousemove", draw);
+    canvas.addEventListener("mouseup", stopDraw);
+    canvas.addEventListener("mouseleave", stopDraw);
 }
