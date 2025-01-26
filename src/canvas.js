@@ -7,8 +7,8 @@ export const canvasWrapper = document.getElementById("canvas-wrapper");
 export const context = canvas.getContext("2d");
 
 export let canvasPosition = {x: 0, y: 0};
-// export let initBackgroundColor = "#FFFFFF";
-export let initBackgroundColor = "#00000000";
+export let initBackgroundColor = "#FFFFFF";
+// export let initBackgroundColor = "#00000000";
 
 export let canvasSize = {
     width: 64,
