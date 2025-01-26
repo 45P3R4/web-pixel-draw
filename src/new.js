@@ -54,7 +54,6 @@ function closePopup() {
 }
 
 function createNewCanvas(width, height, backgroundColor) {
-    console.log(width + " " + height + " " + backgroundColor);
     initCanvas(width, height, backgroundColor);
     closePopup();
 }
