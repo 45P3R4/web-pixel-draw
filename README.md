@@ -6,3 +6,4 @@ TODO:
 - lines by shift key
 - layers
 - undo\redo
+- minimap
