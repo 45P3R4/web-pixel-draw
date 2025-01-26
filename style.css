@@ -12,6 +12,7 @@ html {
 
 button {
     font-family: 'monogram';
+    line-height: 1;
     font-size: 24px;
 }
 
